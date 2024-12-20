@@ -100,7 +100,7 @@
             </div>
 
             <div class="header-buttons">
-              <a href="#" target="_blank" class="btn btn-primary">Download CV</a>
+              <a id="download_cv" style="cursor: pointer;" onclick="downloadFile()" class="btn btn-primary">Download CV</a>
             </div>
 
           </header>
@@ -778,6 +778,18 @@ Untuk manajemen basis data, saya terbiasa bekerja dengan MySQL dan MongoDB, yang
 
     <script src="js/validator.js"></script>
     <script src="js/main.js"></script>
+    <script>
+      function downloadFile(){
+        const cvPath = './assets/CV_Gustopa.pdf'
+        const filename = "CV_Gustopa.pdf"
+        const a = document.createElement('a')
+        a.href = cvPath
+        a.download = filename
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+      }
+    </script>
   <script defer src="https://static.cloudflareinsights.com/beacon.min.js/vcd15cbe7772f49c399c6a5babf22c1241717689176015" integrity="sha512-ZpsOmlRQV6y907TI0dKBHq9Md29nnaEIPlkf84rnaERnq6zvWvPUqr2ft8M1aS28oN72PdrCzSjY4U6VaAw1EQ==" data-cf-beacon='{"rayId":"8f2a3c48ec4d2443","version":"2024.10.5","r":1,"serverTiming":{"name":{"cfExtPri":true,"cfL4":true,"cfSpeedBrain":true,"cfCacheStatus":true}},"token":"94b99c0576dc45bf9d669fb5e9256829","b":1}' crossorigin="anonymous"></script>
 </body>
 
